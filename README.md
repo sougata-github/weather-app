@@ -1,6 +1,6 @@
 # A Real-Time Weather Dashboard Powered by OpenWeatherMap API
 
-![chrome_ydq46V86Kh](https://github.com/user-attachments/assets/1adbea8d-3bcb-4369-93c8-4444080ad9b9)
+![png](https://github.com/user-attachments/assets/e86cda0d-3f93-4833-8c3a-2c26d58cb4ac)
 
 ## Key Features
 
