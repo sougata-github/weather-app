@@ -7,7 +7,14 @@ const BASE_URL = "https://api.openweathermap.org/data/2.5/forecast";
 
 const fetchWeather = async (city: string) => {
   const res = await fetch(`${BASE_URL}?q=${city}&appid=${API_KEY}`);
-  if (!res.ok) throw new Error("Failed to fetch weather data");
+
+  if (!res.ok) {
+    if (res.status === 404) {
+      throw new Error("City not found");
+    }
+    throw new Error("Failed to fetch weather data");
+  }
+
   return res.json();
 };
 
