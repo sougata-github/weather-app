@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 import styles from "./card.module.css";
 
 interface CardProps {
@@ -8,11 +6,7 @@ interface CardProps {
 }
 
 const Card = ({ children, className }: CardProps) => {
-  return (
-    <motion.div className={`${styles.card} ${className}`}>
-      {children}
-    </motion.div>
-  );
+  return <div className={`${styles.card} ${className}`}>{children}</div>;
 };
 
 export default Card;
