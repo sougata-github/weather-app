@@ -1,0 +1,13 @@
+.container {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

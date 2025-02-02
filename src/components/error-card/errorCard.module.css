@@ -1,0 +1,10 @@
+.errorCard {
+  height: 204px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorMessage {
+  color: white;
+}

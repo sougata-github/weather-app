@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Geist", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: #ffc499;
+  background-image: radial-gradient(
+      at 32% 100%,
+      rgb(58, 124, 255) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 22% 52%, hsla(320, 99%, 62%, 1) 0px, transparent 50%),
+    radial-gradient(at 56% 63%, rgb(255, 98, 176) 0px, transparent 50%),
+    radial-gradient(at 63% 20%, rgb(255, 132, 171) 0px, transparent 50%),
+    radial-gradient(at 98% 99%, hsla(252, 99%, 72%, 1) 0px, transparent 50%),
+    radial-gradient(at 92% 7%, rgb(255, 146, 79) 0px, transparent 50%),
+    radial-gradient(at 96% 27%, rgb(159, 81, 255) 0px, transparent 50%);
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

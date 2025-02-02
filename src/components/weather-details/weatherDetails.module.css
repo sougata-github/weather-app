@@ -1,0 +1,68 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.weatherCard,
+.errorCard,
+.loader {
+  grid-column: span 1;
+}
+
+@media (min-width: 768px) {
+  .weatherCard,
+  .errorCard,
+  .loader {
+    grid-column: span 3;
+  }
+}
+
+.weatherSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.weatherTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.weatherStats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weatherColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.weatherItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.weatherIconLabel {
+  display: flex;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.weatherLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.weatherValue {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
