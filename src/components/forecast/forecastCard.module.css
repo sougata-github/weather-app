@@ -7,13 +7,15 @@
 }
 
 .forecastCard,
-.loader {
+.loader,
+.errorCard {
   grid-column: span 1;
 }
 
 @media (min-width: 768px) {
   .forecastCard,
-  .loader {
+  .loader,
+  .errorCard {
     grid-column: span 5;
   }
 }
