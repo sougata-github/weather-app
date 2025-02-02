@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# A Real-Time Weather Dashboard Powered by OpenWeatherMap API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![chrome_ydq46V86Kh](https://github.com/user-attachments/assets/1adbea8d-3bcb-4369-93c8-4444080ad9b9)
 
-Currently, two official plugins are available:
+## Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Real-time weather data 
+- Persisted searched city
+- 5-day weather forecast
+- Caching and revalidation (polling)
+- Clean code and best practices
+- Organised file and folder structure
+- Fully responsive
+- Beautifully designed loading state
+- Error states as fallback
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React.js** + **Vite**
+- **CSS Modules**
+- **TypeScript**
+- **OpenWeatherMap API**
+- **React Query**
+- **Lucide React**
+- **Vercel**
+- **Git**
+- **GitHub**
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Clone the repo
+```bash
+git clone https://github.com/sougata-github/weather-app.git
+cd weather-app
 ```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+2. Create a .env file in the root of your project and add the following environment variable:
+```bash
+VITE_WEATHER_API_KEY=your_api_key
+```
+3. Install dependencies
+```bash
+npm install
+```
+4. Run the project locally
+```bash
+npm run dev
 ```
