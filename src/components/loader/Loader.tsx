@@ -1,4 +1,4 @@
-import styles from "./Loader.module.css";
+import styles from "./loader.module.css";
 import Card from "../card/Card";
 
 const Loader = ({ className }: { className?: string }) => {

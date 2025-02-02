@@ -1,5 +1,5 @@
 import { useWeatherUnit } from "../../hooks/useWeatherUnit";
-import styles from "./TemperatureToggle.module.css";
+import styles from "./temperatureToggle.module.css";
 
 const TemperatureToggle = () => {
   const { unit, toggleUnit } = useWeatherUnit();
