@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 import { useState } from "react";
 
@@ -23,9 +22,9 @@ const SearchBar = () => {
         onChange={(e) => setInput(e.target.value)}
         className={styles.input}
       />
-      <motion.button type="submit">
+      <button type="submit">
         <Search size={20} className={styles.button} />
-      </motion.button>
+      </button>
     </form>
   );
 };
