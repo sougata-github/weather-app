@@ -9,6 +9,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --_mesh-gradient-blur: 0px;
+  --_mesh-gradient-blend-mode: normal;
 }
 
 body {
@@ -36,18 +39,12 @@ body {
 
 body {
   margin: 0;
-  background-color: #ffc499;
-  background-image: radial-gradient(
-      at 32% 100%,
-      rgb(58, 124, 255) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 22% 52%, hsla(320, 99%, 62%, 1) 0px, transparent 50%),
-    radial-gradient(at 56% 63%, rgb(255, 98, 176) 0px, transparent 50%),
-    radial-gradient(at 63% 20%, rgb(255, 132, 171) 0px, transparent 50%),
-    radial-gradient(at 98% 99%, hsla(252, 99%, 72%, 1) 0px, transparent 50%),
-    radial-gradient(at 92% 7%, rgb(255, 146, 79) 0px, transparent 50%),
-    radial-gradient(at 96% 27%, rgb(159, 81, 255) 0px, transparent 50%);
+  background: radial-gradient(at 11% 43%, #f020e2 0px, transparent 50%),
+    radial-gradient(at 92% 73%, #f09620 0px, transparent 50%),
+    radial-gradient(at 89% 53%, #20f02e 0px, transparent 50%),
+    radial-gradient(at 47% 34%, #207af0 0px, transparent 50%) #000000;
+  mix-blend-mode: var(--_mesh-gradient-blend-mode);
+  filter: blur(var(--_mesh-gradient-blur));
   max-width: 56rem;
   margin-left: auto;
   margin-right: auto;
@@ -58,4 +55,11 @@ body {
   padding-right: 2rem;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
