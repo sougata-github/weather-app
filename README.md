@@ -41,7 +41,7 @@ VITE_WEATHER_API_KEY=your_api_key
 ```bash
 npm install
 ```
-5. Run the project locally
+4. Run the project locally
 ```bash
 npm run dev
 ```
