@@ -5,7 +5,6 @@ import { useWeatherData } from "../../hooks/useWeatherData";
 import ErrorCard from "../error-card/ErrorCard";
 import styles from "./forecastCard.module.css";
 import Loader from "../loader/Loader";
-import Card from "../card/Card";
 
 const ForecastCard = () => {
   const { weather, isLoading, error } = useWeatherData();
@@ -24,7 +23,7 @@ const ForecastCard = () => {
     .slice(0, 5);
 
   return (
-    <Card className={`${styles.card} ${styles.forecastCard}`}>
+    <div className={`${styles.card} ${styles.forecastCard}`}>
       <section className={styles.forecastSection}>
         <h2 className={styles.title}>5 Day Forecast</h2>
         <div className={styles.forecastGrid}>
@@ -32,8 +31,11 @@ const ForecastCard = () => {
             const { day: dayName, date } = formatDate(day.dt_txt);
             return (
               <div key={index} className={styles.forecastItem}>
-                <p className={styles.dayName}>{dayName}</p>
-                <p className={styles.date}>{date}</p>
+                <div className={styles.dayAndDate}>
+                  <p className={styles.dayName}>{dayName}</p>
+                  <p className={styles.date}>{date}</p>
+                </div>
+
                 <p className={styles.temperature}>
                   {convertTemperature(day.main.temp, unit).toFixed(1)}°{unit}
                 </p>
@@ -42,7 +44,7 @@ const ForecastCard = () => {
           })}
         </div>
       </section>
-    </Card>
+    </div>
   );
 };
 

@@ -1,17 +1,10 @@
 import styles from "./errorCard.module.css";
-import Card from "../card/Card";
 
-const ErrorCard = ({
-  className,
-  message,
-}: {
-  className?: string;
-  message?: string;
-}) => {
+const ErrorCard = ({ message }: { className?: string; message?: string }) => {
   return (
-    <Card className={`${className} ${styles.errorCard}`}>
+    <div className={styles.card}>
       <p className={styles.errorMessage}>{message}</p>
-    </Card>
+    </div>
   );
 };
 

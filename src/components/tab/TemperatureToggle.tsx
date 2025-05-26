@@ -5,20 +5,16 @@ const TemperatureToggle = () => {
   const { unit, toggleUnit } = useWeatherUnit();
 
   return (
-    <div className={styles.toggleContainer}>
-      <div className={styles.buttonGroup}>
-        <button
-          className={`${styles.button} ${unit === "C" ? styles.active : ""}`}
-          onClick={toggleUnit}
-        >
-          °C
-        </button>
-        <button
-          className={`${styles.button} ${unit === "F" ? styles.active : ""}`}
-          onClick={toggleUnit}
-        >
-          °F
-        </button>
+    <div className={styles.toggleWrapper}>
+      <div
+        className={`${styles.toggleTrack} ${
+          unit === "F" ? styles.toggled : ""
+        }`}
+        onClick={toggleUnit}
+      >
+        <div className={styles.toggleThumb}></div>
+        <div className={styles.toggleLabel}>°C</div>
+        <div className={styles.toggleLabel}>°F</div>
       </div>
     </div>
   );

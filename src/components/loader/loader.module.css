@@ -4,6 +4,13 @@
   transition: all 0.3s ease;
 }
 
+.card {
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
 @keyframes pulse {
   0% {
     opacity: 1;

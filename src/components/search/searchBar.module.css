@@ -1,29 +1,26 @@
 .searchContainer {
   position: relative;
   width: 100%;
-  max-width: 400px; /* Adjust width */
+  max-width: 400px;
   display: flex;
   align-items: center;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.1); /* Glass effect */
-  backdrop-filter: blur(12px);
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
 }
 
 .input {
   width: 100%;
-  padding: 12px 45px 12px 15px; /* Extra padding to the right for the icon */
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  padding: 12px 45px 12px 15px;
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--background);
+  color: var(--foreground);
+  box-shadow: var(--shadow-xs);
   outline: none;
-  background: transparent;
-  color: color;
-  backdrop-filter: blur(10px);
 }
 
-.input::placeholder {
-  color: rgba(255, 255, 255, 0.2);
+.input:focus {
+  outline: var(--outline);
 }
 
 .button {
@@ -34,15 +31,14 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s;
+  transition: transform 0.3s ease;
+  color: var(--muted-foreground);
 }
 
 .button:hover {
-  color: white;
   transform: translateY(-50%) scale(1.1);
 }
 
