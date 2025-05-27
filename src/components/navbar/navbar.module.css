@@ -6,13 +6,6 @@
   border-bottom: 1px solid var(--border-muted, #e5e5e5);
 }
 
-.separator {
-  margin-bottom: 10px;
-  width: 100%;
-  height: 0.5px;
-  background-color: var(--bg-muted-foreground);
-}
-
 .nav {
   display: flex;
   justify-content: space-between;

@@ -1,6 +1,6 @@
+import { useWeatherUnit } from "../../context/WeatherUnitContext";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { formatDate, convertTemperature } from "../../utils";
-import { useWeatherUnit } from "../../hooks/useWeatherUnit";
 import { useWeatherData } from "../../hooks/useWeatherData";
 import ErrorCard from "../error-card/ErrorCard";
 import styles from "./forecastCard.module.css";

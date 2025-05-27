@@ -1,7 +1,7 @@
 import { Search } from "lucide-react";
 import { useState } from "react";
 
-import { useWeather } from "../../hooks/useWeather";
+import { useWeather } from "../../context/WeatherContext";
 import styles from "./searchBar.module.css";
 
 const SearchBar = () => {

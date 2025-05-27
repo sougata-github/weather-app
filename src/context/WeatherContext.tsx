@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext, Dispatch, SetStateAction, useContext } from "react";
 
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
@@ -25,3 +25,12 @@ export const WeatherProvider = ({
     </WeatherContext.Provider>
   );
 };
+
+export function useWeather() {
+  const context = useContext(WeatherContext);
+  if (!context) {
+    throw new Error("useWeather can only be used within Provider");
+  }
+
+  return context;
+}

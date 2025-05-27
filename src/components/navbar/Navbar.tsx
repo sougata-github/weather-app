@@ -24,7 +24,7 @@ const Navbar = () => {
     <>
       <header className={styles.header}>
         <nav className={styles.nav}>
-          <h1>Dashboard</h1>
+          <h1>React Weather</h1>
           <div className={styles.avatarWrapper}>
             <button
               onClick={() => setOpen(!open)}
@@ -45,7 +45,6 @@ const Navbar = () => {
           </div>
         </nav>
       </header>
-      <div className={styles.separator}></div>
     </>
   );
 };

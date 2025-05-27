@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { useWeather } from "./useWeather";
+import { useWeather } from "../context/WeatherContext";
 
 const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 const BASE_URL = "https://api.openweathermap.org/data/2.5/forecast";

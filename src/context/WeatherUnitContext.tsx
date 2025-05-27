@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, ReactNode } from "react";
+import { createContext, ReactNode, useContext } from "react";
 
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
@@ -26,4 +26,11 @@ export const WeatherUnitProvider = ({ children }: { children: ReactNode }) => {
       {children}
     </WeatherUnitContext.Provider>
   );
+};
+
+export const useWeatherUnit = () => {
+  const context = useContext(WeatherUnitContext);
+  if (!context)
+    throw new Error("useWeatherUnit must be used within WeatherUnitProvider");
+  return context;
 };

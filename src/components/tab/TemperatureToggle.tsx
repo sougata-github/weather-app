@@ -1,4 +1,4 @@
-import { useWeatherUnit } from "../../hooks/useWeatherUnit";
+import { useWeatherUnit } from "../../context/WeatherUnitContext";
 import styles from "./temperatureToggle.module.css";
 
 const TemperatureToggle = () => {

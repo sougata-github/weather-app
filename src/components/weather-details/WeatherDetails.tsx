@@ -1,6 +1,6 @@
 import { Cloud, Droplet, Thermometer, Wind } from "lucide-react";
 
-import { useWeatherUnit } from "../../hooks/useWeatherUnit";
+import { useWeatherUnit } from "../../context/WeatherUnitContext";
 import { useWeatherData } from "../../hooks/useWeatherData";
 import styles from "./weatherDetails.module.css";
 import { convertTemperature } from "../../utils";
