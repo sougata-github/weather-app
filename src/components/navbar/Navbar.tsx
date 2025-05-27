@@ -24,7 +24,7 @@ const Navbar = () => {
     <>
       <header className={styles.header}>
         <nav className={styles.nav}>
-          <h1>React Weather</h1>
+          <h1 className={styles.navTitle}>React Weather</h1>
           <div className={styles.avatarWrapper}>
             <button
               onClick={() => setOpen(!open)}

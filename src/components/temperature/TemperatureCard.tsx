@@ -56,10 +56,10 @@ const TemperatureCard = () => {
   // const weatherIcon = `https://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}@2x.png`;
 
   return (
-    <div className={`${styles.card} ${styles.temperatureCard}`}>
+    <div className={styles.card}>
+      <h2 className={styles.temperatureTitle}>Temperature</h2>
       <section className={styles.temperatureSection}>
         <div className={styles.temperatureInfo}>
-          <h2 className={styles.temperatureTitle}>Temperature</h2>
           <div>
             <h2 className={styles.temperatureCity}>{cityName}</h2>
           </div>
