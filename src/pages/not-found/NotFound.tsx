@@ -5,10 +5,15 @@ import styles from "./notFound.module.css";
 const NotFound = () => {
   return (
     <div className={styles.notFound}>
-      The page you're looking for does not exist.
-      <Link to="/dashboard" className={styles.link}>
-        Go to back Dashboard
-      </Link>
+      <div className={styles.container}>
+        <p>The page you're looking for does not exist.</p>
+
+        <div>
+          <Link to="/dashboard" className={styles.link}>
+            Go back to Dashboard
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

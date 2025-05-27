@@ -1,10 +1,11 @@
 .card {
-  position: absolute;
-  inset: 0;
   background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  height: 100vh;
+  width: 100vh;
 }
 
 .errorMessage {

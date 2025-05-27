@@ -1,12 +1,19 @@
 .notFound {
   width: 100vw;
   height: 100vh;
-  display: flex;
+
   align-items: center;
   justify-content: center;
   font-size: var(--text-lg);
   font-weight: var(--font-medium);
   color: var(--muted-foreground);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }
 
 .link {
