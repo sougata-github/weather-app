@@ -61,3 +61,8 @@
     gap: 0.5rem;
   }
 }
+
+.recharts-tooltip-wrapper {
+  font-size: 0.875rem;
+  border-radius: 8px;
+}

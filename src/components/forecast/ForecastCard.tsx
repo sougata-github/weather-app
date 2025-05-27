@@ -1,3 +1,12 @@
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  Tooltip,
+  ResponsiveContainer,
+  Cell,
+} from "recharts";
+
 import { useWeatherUnit } from "../../context/WeatherUnitContext";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { formatDate, convertTemperature } from "../../utils";
@@ -17,32 +26,53 @@ const ForecastCard = () => {
       <ErrorCard message={"No data available"} className={styles.errorCard} />
     );
 
-  // forecast for 5 days (API gives data every 3 hours, so we take the first entry of each day)
   const dailyForecast = weather.list
     .filter((_: any, index: number) => index % 8 === 0)
-    .slice(0, 5);
+    .slice(0, 5)
+    .map((day: any) => {
+      const { day: dayName } = formatDate(day.dt_txt);
+      return {
+        name: dayName.slice(0, 3),
+        temp: Number(convertTemperature(day.main.temp, unit).toFixed(1)),
+        dayIndex: new Date(day.dt_txt).getDay(),
+      };
+    });
 
   return (
     <div className={`${styles.card} ${styles.forecastCard}`}>
       <section className={styles.forecastSection}>
         <h2 className={styles.title}>5 Day Forecast</h2>
-        <div className={styles.forecastGrid}>
-          {dailyForecast.map((day: any, index: number) => {
-            const { day: dayName, date } = formatDate(day.dt_txt);
-            return (
-              <div key={index} className={styles.forecastItem}>
-                <div className={styles.dayAndDate}>
-                  <p className={styles.dayName}>{dayName}</p>
-                  <p className={styles.date}>{date}</p>
-                </div>
-
-                <p className={styles.temperature}>
-                  {convertTemperature(day.main.temp, unit).toFixed(1)}°{unit}
-                </p>
-              </div>
-            );
-          })}
-        </div>
+        <ResponsiveContainer width="100%" height={180}>
+          <BarChart data={dailyForecast}>
+            <XAxis
+              dataKey="name"
+              tickLine={false}
+              axisLine={false}
+              stroke="#6B7280"
+              style={{ fontSize: "14px" }}
+            />
+            <Tooltip
+              cursor={{ fill: "rgba(0,0,0,0.02)" }}
+              contentStyle={{
+                backgroundColor: "var(--background)",
+                borderRadius: "8px",
+                border: "none",
+              }}
+              labelStyle={{ fontWeight: 600 }}
+              formatter={(value: number) => [`${value}°${unit}`, "Temp"]}
+            />
+            <Bar
+              dataKey="temp"
+              radius={[6, 6, 0, 0]}
+              barSize={30}
+              isAnimationActive={true}
+            >
+              {dailyForecast.map((index: number) => (
+                <Cell key={`bar-${index}`} fill={"rgb(16, 185, 129)"} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
       </section>
     </div>
   );
