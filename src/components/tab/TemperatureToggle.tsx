@@ -13,8 +13,8 @@ const TemperatureToggle = () => {
         onClick={toggleUnit}
       >
         <div className={styles.toggleThumb}></div>
-        <div className={styles.toggleLabel}>°C</div>
-        <div className={styles.toggleLabel}>°F</div>
+        <div className={styles.toggleLabel}></div>
+        <div className={styles.toggleLabel}></div>
       </div>
     </div>
   );

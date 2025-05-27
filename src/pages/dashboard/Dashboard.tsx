@@ -13,7 +13,10 @@ const Dashboard = () => {
           <SearchBar />
           <TemperatureToggle />
         </div>
-        <WeatherDetails />
+        <div className={styles.firstRow}>
+          <WeatherDetails />
+        </div>
+
         <div className={styles.secondRow}>
           <div className={styles.tempCard}>
             <TemperatureCard />

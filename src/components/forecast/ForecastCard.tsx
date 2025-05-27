@@ -42,7 +42,7 @@ const ForecastCard = () => {
     <div className={`${styles.card} ${styles.forecastCard}`}>
       <section className={styles.forecastSection}>
         <h2 className={styles.title}>5 Day Forecast</h2>
-        <ResponsiveContainer width="100%" height={180}>
+        <ResponsiveContainer width="100%" height={150}>
           <BarChart data={dailyForecast}>
             <XAxis
               dataKey="name"
@@ -52,11 +52,13 @@ const ForecastCard = () => {
               style={{ fontSize: "14px" }}
             />
             <Tooltip
-              cursor={{ fill: "rgba(0,0,0,0.02)" }}
+              itemStyle={{ color: "rgb(255, 255, 255, 0.6)" }}
+              cursor={{ fill: "rgba(255,255,255,0.05)" }}
               contentStyle={{
-                backgroundColor: "var(--background)",
+                backgroundColor: "var(--bg-muted-foreground)",
                 borderRadius: "8px",
                 border: "none",
+                color: "rgb(16, 185, 129)",
               }}
               labelStyle={{ fontWeight: 600 }}
               formatter={(value: number) => [`${value}°${unit}`, "Temp"]}
@@ -68,7 +70,11 @@ const ForecastCard = () => {
               isAnimationActive={true}
             >
               {dailyForecast.map((index: number) => (
-                <Cell key={`bar-${index}`} fill={"rgb(16, 185, 129)"} />
+                <Cell
+                  key={`bar-${index}`}
+                  fill={"rgb(16, 185, 129)"}
+                  className={styles.glow}
+                />
               ))}
             </Bar>
           </BarChart>

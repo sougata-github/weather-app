@@ -1,2 +1,9 @@
-
-
+.grainOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("/grain.jpg");
+  background-position: center;
+  opacity: 0.05;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}

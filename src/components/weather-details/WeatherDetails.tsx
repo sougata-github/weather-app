@@ -1,4 +1,5 @@
 import { Cloud, Droplet, Thermometer, Wind } from "lucide-react";
+import NumberFlow from "@number-flow/react";
 
 import { useWeatherUnit } from "../../context/WeatherUnitContext";
 import { useWeatherData } from "../../hooks/useWeatherData";
@@ -58,7 +59,13 @@ const WeatherDetails = () => {
               <p className={styles.weatherLabel}>{stat.label}</p>
               {stat.icon}
             </div>
-            <h2 className={styles.weatherValue}>{stat.value}</h2>
+            <h2 className={styles.weatherValue}>
+              {stat.label === "Real Feel" ? (
+                <NumberFlow value={parseInt(stat.value)} />
+              ) : (
+                stat.value
+              )}
+            </h2>
           </div>
         </div>
       ))}

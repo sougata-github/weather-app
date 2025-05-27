@@ -1,13 +1,13 @@
 .layout {
+  min-height: 100vh;
+
   display: flex;
   flex-direction: column;
   max-width: 1152px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 2rem;
+  padding: 2rem;
   padding-bottom: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
   overflow-y: auto;
   overflow-x: hidden;
 }

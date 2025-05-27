@@ -12,9 +12,17 @@ const Login = () => {
       <div className={styles.card}>
         <div className={styles.titleContainer}>
           <span className={styles.title}>
-            <Zap size={20} fill="#10B981" /> Supa Weather
+            <Zap
+              size={28}
+              fill="#10B981"
+              strokeWidth={0}
+              style={{
+                marginRight: "4px",
+              }}
+            />{" "}
+            Supa Weather
           </span>
-          <p className={styles.subheading}>Welcome back! Sign in to contine</p>
+          <p className={styles.subheading}>Welcome back! Sign in to contine.</p>
         </div>
 
         <button
@@ -22,9 +30,7 @@ const Login = () => {
           onClick={() => signIn()}
           disabled={status === "pending"}
         >
-          <span>
-            <FaGoogle size={15} fill="#ffffff" />
-          </span>
+          <FaGoogle size={15} />
           Sign in with Google
         </button>
       </div>

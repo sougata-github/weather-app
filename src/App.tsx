@@ -10,6 +10,7 @@ import Login from "./pages/login/Login";
 const App = () => {
   return (
     <BrowserRouter>
+      <div className="grainOverlay" />
       <Routes>
         <Route
           element={

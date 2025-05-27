@@ -1,7 +1,8 @@
 .card {
+  outline: var(--outline-muted);
   border-radius: var(--radius-lg);
   padding: 3rem 4rem;
-  box-shadow: var(--shadow-xs);
+  background: rgba(255, 255, 255, 0.05);
   transition: transform 0.2s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -40,6 +41,7 @@
 }
 
 .signInButton {
+  border: none;
   color: var(--background);
   background-color: rgb(16, 185, 129);
   display: flex;
@@ -49,7 +51,6 @@
   width: 100%;
   padding: 8px;
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-xs);
   font-weight: var(--font-semibold);
   cursor: pointer;
 }

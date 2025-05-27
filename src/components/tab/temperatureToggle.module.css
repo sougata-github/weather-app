@@ -8,38 +8,40 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  background-color: var(--muted-background, #e0e0e0);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 9999px;
   position: relative;
-  width: 80px;
-  height: 36px;
-  cursor: pointer;
+  width: 30px;
+  height: 20px;
   padding: 0 6px;
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
+/* click areas */
+.toggleHalf {
+  position: relative;
+  z-index: 2;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* thumb */
 .toggleThumb {
-  display: flex;
   position: absolute;
-  top: 4px;
+  top: 2.5px;
   left: 4px;
-  width: 28px;
-  height: 28px;
-  background-color: white;
+  width: 15px;
+  height: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
   z-index: 1;
+  cursor: pointer;
 }
 
-.toggleLabel {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--muted-foreground, #555);
-  text-align: center;
-  z-index: 2;
-}
-
+/* move thumb when toggled */
 .toggled .toggleThumb {
-  transform: translateX(44px);
+  transform: translateX(20px);
 }

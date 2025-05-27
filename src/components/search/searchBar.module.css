@@ -13,10 +13,14 @@
   border-radius: var(--radius-lg);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-medium);
-  background-color: var(--background);
+  background-color: rgba(255, 255, 255, 0.05);
   color: var(--foreground);
-  box-shadow: var(--shadow-xs);
   outline: none;
+  border: none;
+}
+
+.input::placeholder {
+  color: var(--foreground);
 }
 
 .input:focus {
@@ -25,17 +29,15 @@
 
 .button {
   position: absolute;
-  right: 15px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  background: none;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease;
-  color: var(--muted-foreground);
 }
 
 .button:hover {

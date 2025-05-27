@@ -5,8 +5,8 @@ import { useWeather } from "../../context/WeatherContext";
 import styles from "./searchBar.module.css";
 
 const SearchBar = () => {
-  const { setCity } = useWeather();
-  const [input, setInput] = useState("");
+  const { city, setCity } = useWeather();
+  const [input, setInput] = useState(city || "");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,9 +22,13 @@ const SearchBar = () => {
         onChange={(e) => setInput(e.target.value)}
         className={styles.input}
       />
-      <button type="submit">
-        <Search size={20} className={styles.button} />
-      </button>
+
+      <Search
+        size={20}
+        className={styles.button}
+        onClick={handleSubmit}
+        role="button"
+      />
     </form>
   );
 };

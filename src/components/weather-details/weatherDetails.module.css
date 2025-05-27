@@ -25,9 +25,8 @@
 .card {
   border-radius: var(--radius-lg);
   padding: 20px;
-  box-shadow: var(--shadow-xs);
+  background: rgba(255, 255, 255, 0.05);
   transition: transform 0.2s ease, box-shadow 0.3s ease;
-  background-color: var(--card-bg);
 }
 
 .weatherItem {
@@ -37,6 +36,7 @@
 }
 
 .weatherIconLabel {
+  align-items: center;
   justify-content: space-between;
   display: flex;
   gap: 0.5rem;
@@ -52,6 +52,6 @@
 }
 
 .weatherValue {
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: var(--font-semibold);
 }

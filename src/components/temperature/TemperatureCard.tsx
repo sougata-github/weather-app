@@ -10,6 +10,7 @@ import {
   CloudHail,
   ThermometerSnowflake,
 } from "lucide-react";
+import NumberFlow from "@number-flow/react";
 
 import { useWeatherUnit } from "../../context/WeatherUnitContext";
 import { useWeatherData } from "../../hooks/useWeatherData";
@@ -17,6 +18,8 @@ import styles from "./temperatureCard.module.css";
 import { convertTemperature } from "../../utils";
 import ErrorCard from "../error-card/ErrorCard";
 import Loader from "../loader/Loader";
+
+// ✅ import NumberFlow
 
 const weatherIcons: { [key: string]: JSX.Element } = {
   Clear: <Sun size={48} />,
@@ -48,29 +51,25 @@ const TemperatureCard = () => {
     );
 
   const cityName = weather.city.name;
-  const temperature = convertTemperature(
-    weather.list[0].main.temp,
-    unit
-  ).toFixed(1);
+  const temperature = Number(
+    convertTemperature(weather.list[0].main.temp, unit).toFixed(1)
+  );
   const weatherCondition = weather.list[0].weather[0].main;
-  // const weatherIcon = `https://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}@2x.png`;
 
   return (
     <div className={styles.card}>
       <h2 className={styles.temperatureTitle}>Temperature</h2>
       <section className={styles.temperatureSection}>
         <div className={styles.temperatureInfo}>
-          <div>
-            <h2 className={styles.temperatureCity}>{cityName}</h2>
-          </div>
-          <h1 className={styles.temperatureValue}>
-            {temperature}°{unit}
-          </h1>
+          <h3 className={styles.temperatureValue}>
+            <NumberFlow value={temperature} />°{unit}
+          </h3>
+          <h4 className={styles.temperatureCity}>{cityName}</h4>
         </div>
         <div className={styles.weatherIconContainer}>
           <div className={styles.weatherIcon}>
             {weatherIcons[weatherCondition] || (
-              <ThermometerSnowflake size={60} />
+              <ThermometerSnowflake size={48} />
             )}
           </div>
           <p className={styles.temperatureCondition}>{weatherCondition}</p>

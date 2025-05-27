@@ -1,9 +1,9 @@
 .card {
-  height: 100%;
   border-radius: var(--radius-lg);
   padding: 20px;
-  box-shadow: var(--shadow-xs);
+  background: rgba(255, 255, 255, 0.05);
   transition: transform 0.2s ease, box-shadow 0.3s ease;
+  height: 100%;
 }
 
 .errorCard,
@@ -21,7 +21,7 @@
 .temperatureTitle {
   font-size: var(--text-base);
   font-weight: var(--font-medium);
-  margin-bottom: 10px;
+  margin-bottom: 18px;
 }
 
 .temperatureCondition {
@@ -31,17 +31,29 @@
   margin-top: 8px;
 }
 
+.temperatureValue {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .temperatureValue {
+    margin: 0;
+    font-size: 4rem;
+  }
+}
+
+.temperatureCity {
+  margin-left: 12px;
+  line-height: 0;
+}
+
 .temperatureSection {
   margin-top: 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.temperatureInfo {
-  display: flex;
-  flex-direction: column;
 }
 
 .weatherIcon {

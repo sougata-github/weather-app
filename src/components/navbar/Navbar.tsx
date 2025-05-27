@@ -29,7 +29,7 @@ const Navbar = () => {
       <header className={styles.header}>
         <nav className={styles.nav}>
           <div className={styles.navTitleContainer}>
-            <Zap size={22} fill="#10B981" />
+            <Zap size={28} fill="#10B981" strokeWidth={0} />
             <h1 className={styles.navTitle}>Supa Weather</h1>
           </div>
 

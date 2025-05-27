@@ -1,7 +1,7 @@
 .card {
   border-radius: var(--radius-lg);
   padding: 20px;
-  box-shadow: var(--shadow-xs);
+  background: rgba(255, 255, 255, 0.05);
   transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
@@ -65,4 +65,9 @@
 .recharts-tooltip-wrapper {
   font-size: 0.875rem;
   border-radius: 8px;
+}
+
+.glow {
+  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.6));
+  transition: filter 0.3s ease;
 }

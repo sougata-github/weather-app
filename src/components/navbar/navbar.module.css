@@ -1,9 +1,6 @@
 .header {
-  width: 100%;
   padding-top: 1rem;
-  padding-left: 0;
-  background: var(--background);
-  border-bottom: 1px solid var(--border-muted, #e5e5e5);
+  background: transparent;
 }
 
 .nav {
@@ -45,7 +42,7 @@
   justify-content: center;
   cursor: pointer;
 
-  outline: var(--outline-muted);
+  outline: var(--outline);
 }
 
 .avatarButton img {
@@ -99,10 +96,9 @@
   position: absolute;
   top: 120%;
   right: 0;
-  background: var(--background);
+  background: var(--bg-muted-foreground);
   border: 1px solid var(--border-muted, #e5e5e5);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
   padding: 0.75rem 1rem;
   min-width: 220px;
   z-index: 10;
@@ -141,7 +137,7 @@
 }
 
 .signOut:hover {
-  background-color: #f3f3f3;
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 @keyframes fadeIn {
