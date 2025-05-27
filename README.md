@@ -13,6 +13,7 @@
 - Fully responsive
 - Beautifully designed loading state
 - Error states as fallback
+- Authentication using Supabase
 
 ## Tech Stack
 
@@ -21,6 +22,8 @@
 - **TypeScript**
 - **OpenWeatherMap API**
 - **React Query**
+- **Supabase**
+- **React Router**
 - **Lucide React**
 - **Vercel**
 - **Git**
