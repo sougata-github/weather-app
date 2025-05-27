@@ -5,6 +5,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router";
 import ProtectedRoute from "./components/protected-route/ProtectedRoute";
 import AppLayout from "./components/layout/AppLayout";
 import Dashboard from "./pages/dashboard/Dashboard";
+import NotFound from "./pages/not-found/NotFound";
 import Login from "./pages/login/Login";
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="dashboard" element={<Dashboard />} />
         </Route>
         <Route path="login" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
