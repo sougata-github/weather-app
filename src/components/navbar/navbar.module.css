@@ -17,6 +17,13 @@
   font-weight: var(--font-semibold);
 }
 
+.navTitleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
 .icon {
   width: 18px;
   height: 18px;
@@ -39,6 +46,53 @@
   cursor: pointer;
 
   outline: var(--outline-muted);
+}
+
+.avatarButton img {
+  border-radius: var(--radius-full);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.avatarLoader {
+  height: 36px;
+  width: 36px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-muted-foreground);
+  animation: pulse 1.5s infinite;
+  transition: all 0.3s ease;
+}
+
+.infoLoader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.skeleton1 {
+  width: 50%;
+  background-color: var(--bg-muted-foreground);
+  height: 12px;
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+}
+
+.skeleton2 {
+  width: 100%;
+  background-color: var(--bg-muted-foreground);
+  height: 10px;
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
 }
 
 .popover {
@@ -77,6 +131,7 @@
   width: 100%;
   padding: 0.5rem;
   font-size: var(--text-sm);
+  font-weight: var(--font-medium);
   border: none;
   background: transparent;
   border-radius: var(--radius-lg);

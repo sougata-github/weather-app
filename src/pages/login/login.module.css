@@ -1,0 +1,55 @@
+.card {
+  border-radius: var(--radius-lg);
+  padding: 3rem 4rem;
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  min-width: 320px;
+  max-width: 400px;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: var(--text-lg);
+  display: inline-flex;
+  align-items: center;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.subheading {
+  font-size: var(text-sm);
+  color: var(--muted-foreground);
+}
+
+.signInButton {
+  color: var(--background);
+  background-color: rgb(16, 185, 129);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  font-weight: var(--font-semibold);
+  cursor: pointer;
+}

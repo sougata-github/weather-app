@@ -1,9 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import { User } from "lucide-react";
+import { Zap } from "lucide-react";
 
+import { useSignOut, useUser } from "../../hooks/useAuth";
 import styles from "./navbar.module.css";
 
 const Navbar = () => {
+  const { mutate: signOut, status } = useSignOut();
+  const { user, error, isLoading } = useUser();
+
   const [open, setOpen] = useState(false);
   const popoverRef = useRef<HTMLDivElement>(null);
 
@@ -24,25 +28,52 @@ const Navbar = () => {
     <>
       <header className={styles.header}>
         <nav className={styles.nav}>
-          <h1 className={styles.navTitle}>React Weather</h1>
-          <div className={styles.avatarWrapper}>
-            <button
-              onClick={() => setOpen(!open)}
-              className={styles.avatarButton}
-            >
-              <User className={styles.icon} />
-            </button>
-
-            {open && (
-              <div className={styles.popover} ref={popoverRef}>
-                <div className={styles.userInfo}>
-                  <span className={styles.name}>Sougata Das</span>
-                  <span className={styles.email}>sougata@email.com</span>
-                </div>
-                <button className={styles.signOut}>Sign Out</button>
-              </div>
-            )}
+          <div className={styles.navTitleContainer}>
+            <Zap size={20} />
+            <h1 className={styles.navTitle}>Supa Weather</h1>
           </div>
+
+          {error ? (
+            <p>Failer to load user</p>
+          ) : (
+            <div className={styles.avatarWrapper}>
+              <button
+                onClick={() => setOpen(!open)}
+                className={styles.avatarButton}
+              >
+                {isLoading ? (
+                  <div className={styles.avatarLoader} />
+                ) : (
+                  <img src={user?.avatar} width={36} height={36} />
+                )}
+              </button>
+
+              {open && (
+                <div className={styles.popover} ref={popoverRef}>
+                  <div className={styles.userInfo}>
+                    {isLoading ? (
+                      <div className={styles.infoLoader}>
+                        <div className={styles.skeleton1} />
+                        <div className={styles.skeleton2} />
+                      </div>
+                    ) : (
+                      <>
+                        <span className={styles.name}>{user?.name}</span>
+                        <span className={styles.email}>{user?.email}</span>
+                      </>
+                    )}
+                  </div>
+                  <button
+                    className={styles.signOut}
+                    onClick={() => signOut()}
+                    disabled={status === "pending"}
+                  >
+                    Sign Out
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
         </nav>
       </header>
     </>
