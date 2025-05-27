@@ -1,6 +1,6 @@
 # A Real-Time Weather Dashboard Powered by OpenWeatherMap API
 
-![png](https://github.com/user-attachments/assets/e86cda0d-3f93-4833-8c3a-2c26d58cb4ac)
+![Screenshot (15)](https://github.com/user-attachments/assets/35a9bd9d-da9b-4209-90b1-0d743cc11128)
 
 ## Key Features
 
@@ -36,6 +36,12 @@ cd weather-app
 2. Create a .env file in the root of your project and add the following environment variable:
 ```bash
 VITE_WEATHER_API_KEY=your_api_key
+
+VITE_SUPABASE_URL=supabase_url
+VITE_SUPABASE_KEY=supabase_key
+
+GOOGLE_CLIENT_ID=google_client_id
+GOOGLE_CLIENT_SECRET=google_client_secret
 ```
 3. Install dependencies
 ```bash
