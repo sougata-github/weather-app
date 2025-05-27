@@ -1,4 +1,7 @@
 .card {
+  position: absolute;
+  inset: 0;
+
   background-color: transparent;
   display: flex;
   align-items: center;
