@@ -14,7 +14,6 @@
 - Beautifully designed loading state
 - Error states as fallback
 - Authentication using Supabase
-- Subtle Animations and Transitions
 
 ## Tech Stack
 
